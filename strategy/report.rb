@@ -9,6 +9,6 @@ class Report
   end
   
   def output_report
-     @fromater.output_report(@title, @text)
+     @fromater.output_report(self)
   end
 end
