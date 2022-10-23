@@ -1,14 +1,14 @@
 require_relative "formater"
 
 class HTMLFormater < Formater
-  def output_report(title, text)
+  def output_report(context)
     output = """<html>
     <head>
-    <title>#{title}</title>
+    <title>#{context.title}</title>
     </head>
     <body>"""
     
-    text.each do |line|
+    context.text.each do |line|
       output << "<p>#{line}</p>"
     end
     
