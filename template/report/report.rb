@@ -12,6 +12,8 @@ class Report
     output_body
     output_body_end
     output_end
+    
+    @report_output
   end
   
   def output_body
