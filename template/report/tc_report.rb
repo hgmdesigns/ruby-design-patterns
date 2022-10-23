@@ -1,4 +1,5 @@
 require_relative "HTML_report"
+require_relative "plain_text_report"
 require 'test/unit'
 
 class TestReport < Test::Unit::TestCase
@@ -10,8 +11,8 @@ class TestReport < Test::Unit::TestCase
   
   def test_plain_output
     # pending update
-    report = Report.new
-    expected_plain_output = "*** Monthly Report ***\n" + "Things are going\n" + "really, really well."
-    assert_equal(report.output(:plain), expected_plain_output)
+    report = PlainTextReport.new
+    expected_plain_output = "*** Monthly Report ***\nThings are going\nreally, really well."
+    assert_equal(report.output, expected_plain_output)
   end
 end

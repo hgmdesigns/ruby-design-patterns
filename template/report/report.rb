@@ -22,6 +22,10 @@ class Report
     end
   end
   
+  def output_line(line)
+    raise 'Called abstract method: output_line'
+  end
+  
   def output_start
     raise 'Called abstract method: output_start'
   end
