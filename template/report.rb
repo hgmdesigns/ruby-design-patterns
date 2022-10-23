@@ -2,18 +2,39 @@ class Report
   def initialize
     @title = "Monthly Report"
     @text = [ 'Things are going', 'really, really well.' ]
+    @report_output = ""
   end
   
-  def output
-    puts('<html>')
-    puts('  <head>')
-    puts("    <title>#{@title}</title>")
-    puts('  </head>')
-    puts('  <body>')
-    @text.each do |line|
-      puts("  <p>#{line}</p>")
+  def output(format=:plain)
+    if format == :plain
+      @report_output << "*** #{@title} ***"
+    elsif format == :html 
+      @report_output << """
+      <html>
+       <head>
+        <title>#{@title}</title>
+        </head>
+      <body>
+      """
+    else
+      raise "Unknown format: #{fromat}"
     end
-    puts('  </body>')
-    puts('</html>')
+   
+    @text.each do |line|
+      if format == :plain
+        @report_output << "\n" + line
+      elsif format == :html
+        @report_output << "\n" + "    <p>#{line}</p>"
+      end
+    end
+    
+    if format == :html
+      @report_output << """
+        </body>
+      </html>
+      """
+    end
+    
+    @report_output
   end
 end
