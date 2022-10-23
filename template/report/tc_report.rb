@@ -10,7 +10,6 @@ class TestReport < Test::Unit::TestCase
   end
   
   def test_plain_output
-    # pending update
     report = PlainTextReport.new
     expected_plain_output = "*** Monthly Report ***\nThings are going\nreally, really well."
     assert_equal(report.output, expected_plain_output)
