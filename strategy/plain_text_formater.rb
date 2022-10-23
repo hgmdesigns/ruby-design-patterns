@@ -1,6 +1,4 @@
-require_relative 'formater'
-
-class PlainTextFormater < Formater
+class PlainTextFormater
   def output_report(context)
     output = "*** #{context.title} ***"
     context.text.each do |line|

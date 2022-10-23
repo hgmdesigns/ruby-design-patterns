@@ -1,6 +1,4 @@
-require_relative "formater"
-
-class HTMLFormater < Formater
+class HTMLFormater
   def output_report(context)
     output = """<html>
     <head>
