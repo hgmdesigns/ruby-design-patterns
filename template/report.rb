@@ -5,36 +5,39 @@ class Report
     @report_output = ""
   end
   
-  def output(format=:plain)
-    if format == :plain
-      @report_output << "*** #{@title} ***"
-    elsif format == :html 
-      @report_output << """
-      <html>
-       <head>
-        <title>#{@title}</title>
-        </head>
-      <body>
-      """
-    else
-      raise "Unknown format: #{fromat}"
-    end
-   
-    @text.each do |line|
-      if format == :plain
-        @report_output << "\n" + line
-      elsif format == :html
-        @report_output << "\n" + "    <p>#{line}</p>"
-      end
-    end
-    
-    if format == :html
-      @report_output << """
-        </body>
-      </html>
-      """
-    end
-    
-    @report_output
+  def output
+    output_start
+    output_head
+    output_body_start
+    output_body
+    output_body_end
+    output_end
   end
+  
+  def output_body
+    @text.each do |line|
+      output_line(line)
+    end
+  end
+  
+  def output_start
+    raise 'Called abstract method: output_start'
+  end
+  
+  def output_head
+    raise 'Called abstract method: output_head'
+  end
+  
+  def output_body_start
+    raise 'Called abstract method: output_body_start'
+  end
+  
+  def output_body_end
+    raise 'Called abstract method: output_body_end'
+  end
+  
+  def output_end
+    raise 'Called abstract method: output_end'
+  end
+  
 end
