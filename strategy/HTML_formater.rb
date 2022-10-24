@@ -16,6 +16,4 @@ class HTMLFormater
       
   output
   end
-  
-  
 end
