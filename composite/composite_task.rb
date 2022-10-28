@@ -1,3 +1,4 @@
+require_relative 'task'
 class CompositeTask < Task
   def initialize(name)
     super(name)

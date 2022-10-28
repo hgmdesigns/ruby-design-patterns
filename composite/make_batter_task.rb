@@ -11,5 +11,4 @@ class MakeBatterTask < CompositeTask
     add_sub_task(AddLiquidsTask.new)
     add_sub_task(MixTask.new)
   end
-
 end
