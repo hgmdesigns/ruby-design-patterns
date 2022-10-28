@@ -32,4 +32,10 @@ class CompositeTask < Task
     @sub_tasks.each {|task| time += task.get_time_required }
     time
   end
+  
+  def total_number_of_basic_tasks
+    total_tasks=0
+    @sub_tasks.each {|task| total_tasks += task.total_number_of_basic_tasks }
+    total_tasks
+  end
 end
