@@ -3,7 +3,7 @@ module Subject
     @observers = []
   end
   
-  def add_observer(observer)
+  def add_observer(&observer)
     @observers << observer
   end
   
