@@ -1,5 +1,6 @@
 class Task
-  attr_reader :name, :parent
+  attr_reader :name
+  attr_accessor :parent
   
   def initialize(name)
     @name = name
