@@ -10,7 +10,7 @@ class CompositeTask < Task
   end
   
   def <<(task)
-    @sub_tasks << task
+   add_sub_task(task)
   end
   
   def [](index)
