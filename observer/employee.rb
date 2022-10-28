@@ -1,16 +1,18 @@
+require_relative 'subject'
 class Employee
+  include Subject
   attr_reader :name
   attr_accessor :title, :salary
   
-  def initialize(name, title, salary, payroll)
+  def initialize(name, title, salary)
+    super()
     @name = name
     @title = title
     @salary = salary
-    @payroll = payroll
   end
   
   def salary=(new_salary)
     @salary = new_salary
-    @payroll.update(self)
+    notify_observers
   end
 end
