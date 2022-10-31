@@ -1,4 +1,4 @@
-require_relative 'composite_task'
+require_relative '../composite_task'
 require_relative 'make_batter_task'
 require_relative 'fill_pan_task'
 require_relative 'frost_task'

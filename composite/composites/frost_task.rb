@@ -1,4 +1,4 @@
-require_relative 'composite_task'
+require_relative '../composite_task'
 class FrostTask < CompositeTask
   def initialize
     super("Frost Task")

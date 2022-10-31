@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative 'make_cake'
+require_relative '../composites/make_cake'
 
 class MakeCakeTest < MiniTest::Test
 

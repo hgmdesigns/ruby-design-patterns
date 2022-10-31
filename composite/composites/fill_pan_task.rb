@@ -1,4 +1,4 @@
-require_relative 'composite_task'
+require_relative '../composite_task'
 class FillPanTask < CompositeTask
   def initialize
     super("Fill Pan Task")
