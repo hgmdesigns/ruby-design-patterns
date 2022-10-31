@@ -26,4 +26,14 @@ class ArrayIteratorTest < Minitest::Test
     
     assert_equal(['a', 'b', 'c'], output)
   end
+  
+  
+  def test_merge
+    a = [1,2,3,4,5,6,7,8]
+    b = [9,10,11,12,13,14,15,16]
+    
+    expected_output = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+    
+    assert_equal(expected_output, ArrayIterator.merge(a,b))
+  end
 end
