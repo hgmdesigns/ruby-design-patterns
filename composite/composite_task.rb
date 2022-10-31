@@ -18,7 +18,7 @@ class CompositeTask < Task
     @sub_tasks[index]
   end
   
-  def [](index, new_value)
+  def []=(index, new_value)
     @sub_tasks[index] = new_value
   end
   
@@ -28,9 +28,9 @@ class CompositeTask < Task
   end
   
   def get_time_required
-    time=0.0
-    @sub_tasks.each {|task| time += task.get_time_required }
-    time
+    total_time=0.0
+    @sub_tasks.each {|task| total_time += task.get_time_required }
+    total_time
   end
   
   def total_number_of_basic_tasks
