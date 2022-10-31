@@ -16,6 +16,17 @@ class CompositeTaskTest < Minitest::Test
     assert_equal(TASK_NAME, @composite_task.name)
   end
   
+  def test_access_sub_task_using_index
+     assert_nil(@composite_task[0])
+  end
+  
+  def test_add_sub_task_at_index
+    assert_nil(@composite_task[0])
+     
+    @composite_task[0] = @sub_task_1
+    assert(@sub_task_1, @composite_task[0])
+  end
+  
   def test_adding_sub_tasks
     assert_nil(@composite_task[0])
     
@@ -64,16 +75,5 @@ class CompositeTaskTest < Minitest::Test
     
     assert_equal(@sub_task_1, @composite_task[0])
     assert_equal(@sub_task_2, @composite_task[1])
-  end
-  
-  def test_access_sub_task_using_index
-     assert_nil(@composite_task[0])
-  end
-  
-  def test_add_sub_task_at_index
-    assert_nil(@composite_task[0])
-     
-    @composite_task[0] = @sub_task_1
-    assert(@sub_task_1, @composite_task[0])
   end
 end
